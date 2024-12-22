@@ -1,0 +1,6 @@
+{{ range where .Site.RegularPages "Section" "projects" }}
+<li title='Goto Project {{ .Title }} '>
+    <a style="padding-left: 0;" href="{{ .RelPermalink }}">{{ .Title }}</a>
+</li>
+{{ end }}
+<li><a href="/projects" title="See all of my projects">See all...</a></li>

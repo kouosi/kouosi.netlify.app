@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="{{ .Lang }}">
+
+<head>
+    {{ $_site_title_ := site.Title }}
+    {{ if not .IsHome }}
+    {{ $_site_title_ = printf "%s | %s" .Title site.Title }}
+    {{ end }}
+    <title>{{ $_site_title_ }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#222222">
+    <meta name="description" content="{{ if .Params.description }}{{ .Params.description }}{{ else if .Summary }}{{ .Summary | plainify }}{{ else }}{{ site.Params.defaultDescription }}{{ end }}">
+    <meta name="keywords" content="fuckin,read,die">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <link rel="alternate" type="application/rss+xml" title="Kouosi Tsuamine RSS" href="/rss.xml">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        {{ partial "header.html" . }}
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <article>
+            <!-- Main content block -->
+            {{ block "main" . }}
+            {{ end }}
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        {{ partial "footer.html" . }}
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="/js/app.js"></script>
+</body>
+
+</html>

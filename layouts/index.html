@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="intro">
+    <h2>Welcome to My website!</h2>
+    <div class="section-content" id="home-intro">
+        <img src="https://andrewkelley.me/img/profile-cartopia.jpg" alt="My Profile Pciture"
+            title="Kouosi Tsuamine">
+        <div>
+            <p> My name is <b title="My fake name">Kouosi Takayama</b>. I am a computer enthusiast from
+                Nepal, a small country located
+                between
+                China
+                and India. I am currently pursuing a Bachelor's Degree in Electrical Engineering from
+                Tribhuvan
+                University, Nepal.</p>
+            <p>My primary interests include low-level systems programming as well as robotics. I have also
+                worked on
+                several robotics projects. In my free time I also read manga and watch anime.</p>
+        </div>
+    </div>
+</div>
+
+<h2>Recent Posts</h2>
+<ul>
+    {{ partial "recent_posts.html" . }}
+</ul>
+
+<h2>Posts Tags</h2>
+<ul>
+    {{ partial "recent_tags.html" . }}
+</ul>
+
+<h2>Projects</h2>
+<ul>
+    {{ partial "recent_projects.html" . }}
+</ul>
+{{ end }}

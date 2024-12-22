@@ -1,0 +1,14 @@
+{{ define "main" }}
+<h1>404 Page Not Found</h1>
+<hr>
+
+<ul>
+    {{ range .Data.Pages }}
+    <li>
+        <time datetime="{{ .Date.Format " 2006-01-02T15:04:05Z07:00" }}">
+        {{- .Date.Format "2006 Jan 02" }}</time> &mdash;
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}

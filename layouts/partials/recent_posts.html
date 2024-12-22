@@ -1,0 +1,10 @@
+{{ range where .Site.RegularPages "Section" "posts" }}
+<li title='{{ .Date.Format "Posted on 2006 Jan 02, 04:05" }}'>
+    <time datetime="{{ .Date.UTC.Format " 2006-01-02T15:04:05Z07:00" }}">
+        {{ .Date.Format "2006 Jan 02" }}
+    </time>
+    &mdash;
+    <a style="padding-left: 0;" href="{{ .RelPermalink }}">{{ .Title }}</a>
+</li>
+{{ end }}
+<li><a href="/posts" title="See all posts archives">See all...</a></li>

@@ -1,0 +1,31 @@
+baseURL = 'https://kouosi.netlify.app/'
+languageCode = 'en-us'
+title = 'Kouosi Takayama'
+
+[params]
+    defaultDescription = "Welcome to my website."
+    favicon = "/favicon.ico"
+
+[permalinks]
+    posts = '/posts/:title/'
+
+[sitemap]
+    changefreq = 'monthly'
+    filename = 'sitemap.xml'
+    priority = 0.5
+
+[markup]
+    [markup.highlight]
+        anchorLineNos = false
+        codeFences = true
+        guessSyntax = false
+        hl_Lines = ''
+        hl_inline = false
+        lineAnchors = ''
+        lineNoStart = 1
+        lineNos = false
+        lineNumbersInTable = true
+        noClasses = true
+        noHl = false
+        style = 'monokai'
+        tabWidth = 4

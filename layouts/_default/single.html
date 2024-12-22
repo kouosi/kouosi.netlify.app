@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+{{ if .IsHome }}
+<h1 style="display: none;">{{ site.Title }}</h1>
+{{ else }}
+<h1>{{ .Title }}</h1>
+
+<div class="author_tags">
+{{ partial "header-author" . }}
+{{ partial "header-tags.html" . }}
+</div>
+
+{{ end }}
+<hr>
+
+{{ .Content }}
+
+{{ partial "post_nav.html" . }}
+
+{{ end }}

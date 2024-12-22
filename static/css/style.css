@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-main: #008888;
+    --color-main-alt: #0070a8;
+    --color-bg: #222222;
+    --color-bg-sec: #333333;
+    --color-bg-tri: #444444;
+    --color-fg: #eeeeee;
+    --color-fg-sec: #cfcfcf;
+    --color-fg-tri: #aaaaaa;
+    --color-link: #44aaaa;
+    --color-link-hover: #dddd55;
+    --color-sec: #00aaaa;
+    --color-code-bg: #001111;
+    --color-link-selection: #aaffaa;
+    --color-table: #dddddd;
+}
+
+[data-theme="light"] {
+    --color-main: #00cccc;
+    --color-main-alt: #00a0f8;
+    --color-bg: #eeeeee;
+    --color-bg-sec: #dddddd;
+    --color-bg-tri: #aaaaaa;
+    --color-fg: #222222;
+    --color-fg-sec: #cfcfcf;
+    --color-fg-tri: #aaaaaa;
+    --color-link: #44aaaa;
+    --color-link-hover: #444400;
+    --color-sec: #00aaaa;
+    --color-code-bg: #333333;
+    --color-link-selection: #aaffaa;
+    --color-table: #333333;
+}
+
+/* HTML */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 4rem;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font: inherit "Poppins", serif;
+    transition: background .3s;
+}
+
+/* Table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid var(--color-table);
+    padding: .5rem;
+}
+
+tr:nth-child(even) {
+    background-color: var(--color-bg-tri);
+}
+
+tr:hover {
+    background-color: var(--color-main);
+}
+
+th {
+    padding: .75rem .5rem;
+    text-align: left;
+    background-color: var(--color-main-alt);
+}
+
+/* video */
+iframe,
+video {
+    width: 100%;
+    height: max-content
+}
+
+/* Code section */
+pre {
+    border: 1px solid var(--color-main-alt);
+    background-color: var(--color-code-bg) !important;
+    padding: .75rem;
+    overflow: scroll;
+    max-height: 30rem;
+}
+
+code {
+    white-space: pre-wrap !important;
+    font-size: 1rem;
+}
+
+code span {
+    line-height: 1.2rem;
+}
+
+li {
+    margin-left: 2em;
+}
+
+/* Elements */
+hr {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 2px;
+    background: var(--color-main);
+    color: var(--color-main);
+    border: none;
+}
+
+h1 {
+    font: normal 800 2.4rem "Libre Baskerville", serif;
+    text-align: center;
+}
+
+h2 {
+    font: normal 800 1.8rem/2.4rem "Libre Baskerville", serif;
+    border-bottom: 2px solid var(--color-main);
+    margin-top: 1rem;
+    margin-bottom: .75rem;
+}
+
+h2::before {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f12e';
+    font-weight: 900;
+    margin-right: .25em;
+}
+
+h3 {
+    font: normal 600 1.4rem/3rem "Libre Baskerville", serif;
+}
+
+h4 {
+    font: normal 600 1.2rem/3rem "Libre Baskerville", serif;
+}
+
+h5 {
+    font: italic 600 1rem/3rem "Libre Baskerville", serif;
+}
+
+blockquote {
+    background: var(--color-bg-tri);
+    padding: .25rem;
+    margin: .75rem;
+    margin-left: 2em;
+}
+
+blockquote p {
+    display: block;
+    margin: 0;
+}
+
+p,
+span,
+li,
+div {
+    line-height: 1.6rem;
+    transition: color .3s;
+}
+
+del {
+    color: var(--color-fg-tri);
+}
+
+p {
+    margin-bottom: .5rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-link);
+    transition: all .2s;
+    text-align: center;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-main);
+    z-index: 10000;
+    padding: .5rem;
+}
+
+header a {
+    color: var(--color-fg);
+    transition: all .1s;
+    display: block;
+    align-self: center;
+}
+
+header .trademark {
+    display: flex;
+}
+
+header .trademark * {
+    align-self: center;
+}
+
+header .trademark img {
+    height: 2rem;
+    border-radius: .5rem;
+}
+
+header .trademark span {
+    font: normal 400 1.8rem "Fontdiner Swanky", serif;
+    margin-left: .5rem;
+}
+
+header .navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 56rem;
+    margin: auto;
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+    height: 100%;
+}
+
+header nav ul li {
+    margin-left: .25rem;
+    border-radius: .5rem;
+    padding: .5rem .5rem;
+    cursor: pointer;
+    align-self: center;
+}
+
+#theme-switcher {
+    width: 2.2rem;
+    height: 2.2rem;
+    align-self: center;
+    border: none;
+    font-size: 1.2rem;
+    background: transparent;
+    color: var(--color-fg);
+    transition: all .3s;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#theme-switcher i {
+    display: block;
+}
+
+
+#theme-switcher:hover {
+    background: var(--color-bg-sec);
+}
+
+/* Main */
+main {
+    width: 56rem;
+    margin: auto;
+    margin-bottom: 4rem;
+    min-height: calc(100vh - 19rem);
+}
+
+main img {
+    max-width: 20%;
+    user-select: none;
+}
+
+.section-content#home-intro {
+    display: flex;
+    gap: 1rem;
+}
+
+.intro h2::before {
+    content: '';
+    margin-right: 0;
+}
+
+.flex-space {
+    display: flex;
+    margin: 1rem;
+}
+
+.flex-space h1 {
+    width: 100%;
+}
+
+.flex-space * {
+    align-self: center;
+}
+
+.author_tags {
+    margin-bottom: .25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background: var(--color-bg-sec);
+    position: relative;
+}
+
+footer .links {
+    padding: 1rem;
+}
+
+footer .links a {
+    padding: 0 .25rem;
+}
+
+
+footer p {
+    padding: 1rem;
+}
+
+#back-to-top {
+    border-radius: .5rem;
+    background: var(--color-bg);
+    padding: .75rem 1rem;
+    position: absolute;
+    bottom: 2rem;
+    line-height: 1rem;
+    right: 1rem;
+}
+
+/* Selection */
+::-moz-selection {
+    color: var(--color-fg);
+    background: var(--color-main);
+}
+
+a::selection {
+    color: var(--color-link-selection);
+}
+
+::selection {
+    color: var(--color-fg);
+    background: var(--color-main);
+}

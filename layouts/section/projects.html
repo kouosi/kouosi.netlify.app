@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<div class="flex-space">
+    <h1>{{ .Title }}</h1>
+    <a class="fa-solid fa-rss" href="index.xml"></a>
+</div>
+<hr>
+
+{{ .Content }}
+<ul>
+    {{ range .Pages }}
+    <li title='{{ .Params.description }}'>
+        <a style="padding-left: 0;" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        &mdash; ({{ .Params.project_date }})
+    </li>
+    {{ end }}
+</ul>
+{{ end }}

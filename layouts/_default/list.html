@@ -1,0 +1,28 @@
+{{ define "main" }}
+
+{{ if eq .Section "tags" }}
+<h1>{{ .Title }}</h1>
+<ul>
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }} {{ $cnt := .Count }}
+    {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+    <li><a href={{ .RelPermalink }} title="All pages with tag {{$name}}">{{$name}}</a> - {{$cnt}} Posts</li>
+    {{ end }}
+    {{ end }}
+</ul>
+
+
+{{ else }}
+<h1>{{ .Title }}</h1>
+
+<hr>
+
+<ul>
+    {{ range .Pages }}
+    <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
+
+{{ end }}
