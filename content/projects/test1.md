@@ -1,7 +1,7 @@
 +++
 project_date = '2024-'
-draft = true
-title = 'Project Test'
+draft = false
+title = 'Project Test Entry'
 description = 'Write description here'
 +++
 
