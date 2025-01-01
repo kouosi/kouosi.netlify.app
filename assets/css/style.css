@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -7,18 +5,19 @@
 }
 
 :root {
-    --color-main: #008888;
+    --color-main: #00aaaa;
     --color-main-alt: #0070a8;
-    --color-bg: #222222;
-    --color-bg-sec: #333333;
+    --color-bg: #202121;
+    --color-bg-sec: #2a2a2a;
     --color-bg-tri: #444444;
     --color-fg: #eeeeee;
     --color-fg-sec: #cfcfcf;
     --color-fg-tri: #aaaaaa;
-    --color-link: #44aaaa;
+    --color-link: var(--color-main);
     --color-link-hover: #dddd55;
     --color-sec: #00aaaa;
     --color-code-bg: #001111;
+    --color-code-fg: #ffdddd;
     --color-link-selection: #aaffaa;
     --color-table: #dddddd;
 }
@@ -32,10 +31,11 @@
     --color-fg: #222222;
     --color-fg-sec: #cfcfcf;
     --color-fg-tri: #aaaaaa;
-    --color-link: #44aaaa;
-    --color-link-hover: #444400;
+    --color-link: #005555;
+    --color-link-hover: #000000;
     --color-sec: #00aaaa;
     --color-code-bg: #333333;
+    --color-code-fg: #ffdddd;
     --color-link-selection: #aaffaa;
     --color-table: #333333;
 }
@@ -43,6 +43,7 @@
 /* HTML */
 html {
     scroll-behavior: smooth;
+    max-height: fit-content;
 }
 
 body {
@@ -98,6 +99,7 @@ pre {
 code {
     white-space: pre-wrap !important;
     font-size: 1rem;
+    color: var(--color-code-fg);
 }
 
 code span {
@@ -122,6 +124,7 @@ hr {
 h1 {
     font: normal 800 2.4rem "Libre Baskerville", serif;
     text-align: center;
+    margin-bottom: .5rem;
 }
 
 h2 {
@@ -167,7 +170,7 @@ span,
 li,
 div {
     line-height: 1.6rem;
-    transition: color .3s;
+    /* transition: color .2s; */
 }
 
 del {
@@ -179,7 +182,9 @@ p {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 1px;
     color: var(--color-link);
     transition: all .2s;
     text-align: center;
@@ -188,6 +193,7 @@ a {
 a:hover {
     color: var(--color-link-hover);
     text-decoration: underline;
+    text-decoration-style: solid;
 }
 
 /* Header */
@@ -202,8 +208,15 @@ header {
     padding: .5rem;
 }
 
+header p,
+header span {
+    color: #ffffff;
+}
+
 header a {
-    color: var(--color-fg);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
     transition: all .1s;
     display: block;
     align-self: center;
@@ -213,12 +226,17 @@ header .trademark {
     display: flex;
 }
 
+header a:hover .trademark span {
+    text-decoration: none;
+}
+
 header .trademark * {
     align-self: center;
 }
 
-header .trademark img {
+header .trademark svg {
     height: 2rem;
+    width: 2rem;
     border-radius: .5rem;
 }
 
@@ -230,8 +248,12 @@ header .trademark span {
 header .navbar {
     display: flex;
     justify-content: space-between;
-    width: 56rem;
+    max-width: 56rem;
     margin: auto;
+}
+
+header nav {
+    display: flex;
 }
 
 header nav ul {
@@ -248,38 +270,46 @@ header nav ul li {
     align-self: center;
 }
 
-#theme-switcher {
+#theme-switcher,
+#dropdown-toggle {
     width: 2.2rem;
     height: 2.2rem;
     align-self: center;
     border: none;
     font-size: 1.2rem;
     background: transparent;
-    color: var(--color-fg);
+    color: white;
     transition: all .3s;
     border-radius: 100%;
     cursor: pointer;
+    display: block;
+    text-align: center;
 }
 
 #theme-switcher i {
     display: block;
 }
 
+#dropdown-toggle {
+    display: none;
+}
 
+#dropdown-toggle:hover,
 #theme-switcher:hover {
-    background: var(--color-bg-sec);
+    background: #222222;
 }
 
 /* Main */
 main {
-    width: 56rem;
+    padding: .5rem;
+    max-width: 56rem;
     margin: auto;
     margin-bottom: 4rem;
-    min-height: calc(100vh - 19rem);
+    min-height: calc(100vh - 24rem);
 }
 
 main img {
-    max-width: 20%;
+    max-height: 12rem;
     user-select: none;
 }
 
@@ -329,9 +359,25 @@ footer .links a {
     padding: 0 .25rem;
 }
 
-
 footer p {
     padding: 1rem;
+}
+
+.prev_next {
+    background: var(--color-bg-tri);
+    border-radius: 1rem;
+    padding: .25rem 1rem;
+}
+
+.prev_next,
+#back-to-top
+{
+    text-decoration: none !important;
+}
+
+#back-to-top:hover,
+.prev_next:hover {
+    text-decoration: none !important;
 }
 
 #back-to-top {
@@ -357,4 +403,97 @@ a::selection {
 ::selection {
     color: var(--color-fg);
     background: var(--color-main);
+}
+
+/* phones */
+@media (max-width: 599px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .intro h2 {
+        text-align: center;
+    }
+
+    #back-to-top {
+        background: inherit;
+        position: relative;
+        bottom: inherit;
+        line-height: 1rem;
+    }
+
+    header #dropdown-toggle {
+        display: block;
+    }
+
+    .author_tags {
+        margin-bottom: .25rem;
+        display: block;
+        justify-content: space-between;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 3.8rem;
+        right: 0;
+        background-color: #277d;
+        width: 100%;
+        height: max-content;
+        display: none;
+        /* Initially hidden */
+        z-index: 1001;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: .75rem 1rem;
+        width: 100%;
+    }
+
+    header nav.open ul {
+        display: block;
+    }
+
+    footer .links {
+        padding: 0;
+    }
+
+    footer .links a {
+        padding: .25rem .25rem;
+        display: block;
+    }
+
+    main img {
+        display: block;
+        max-width: 100%;
+        max-height: 25rem;
+        height: auto;
+        width: 100%;
+        /* rotate: 16deg; */
+        overflow: hidden;
+        padding: 1rem 4rem;
+    }
+
+    .section-content#home-intro {
+        display: block;
+    }
+}
+
+/* portrait tablets and large phones */
+@media (min-width: 600px) and (max-width: 767px) {
+    main img {
+        max-height: 14rem;
+    }
+
+    #back-to-top {
+        position: inherit;
+        bottom: inherit;
+        line-height: 1rem;
+        bottom: .25rem;
+    }
 }

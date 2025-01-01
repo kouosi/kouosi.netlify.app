@@ -1,14 +1,17 @@
 <hr>
 {{ if or .Next .Prev }}
 <div>
-{{ with .Prev }}
-<a href="{{ .RelPermalink}}">&lt;- Previous: {{.Title}}</a>
-{{ end }}
+    {{ with (where .Site.RegularPages "Section" .Section).Prev . }}
+    <a class="prev_next" title="Goto Previous {{ .Section }}" href="{{ .RelPermalink }}">
+        <i class="fa fa-arrow-left"></i> Previous: {{ .Title }}
+    </a>
+    {{ end }}
 </div>
 <div style="text-align: right;">
-{{ with .Next }}
-<a href="{{ .RelPermalink}}">Next: {{.Title}} -&gt</a>
-{{ end }}
+    {{ with (where .Site.RegularPages "Section" .Section).Next . }}
+    <a class="prev_next" title="Goto Next {{ .Section }}" href="{{ .RelPermalink }}">
+        Next: {{ .Title }} <i class="fa fa-arrow-right"></i>
+    </a>
+    {{ end }}
 </div>
 {{ end }}
-

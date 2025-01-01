@@ -1,3 +1,4 @@
+/* Switch theme */
 function changeIcon() {
     if (document.body.dataset.theme == 'light') {
         themeSwitcher.innerHTML = "<i class='fa fa-sun'></i>";
@@ -17,4 +18,20 @@ themeSwitcher.addEventListener('click', () => {
     document.body.dataset.theme = newTheme;
     localStorage.setItem('theme', newTheme);
     changeIcon();
+});
+
+/* Toggle navbar */
+document.getElementById('dropdown-toggle').addEventListener('click', function () {
+    document.querySelector('nav').classList.toggle('open');
+});
+
+/* Disable navbar on click */
+document.addEventListener('click', function (event) {
+    const nav = document.querySelector('nav');
+    const toggle = document.getElementById('dropdown-toggle');
+
+    // Check if the click is outside the navigation menu and the toggle button
+    if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+        nav.classList.remove('open');
+    }
 });
