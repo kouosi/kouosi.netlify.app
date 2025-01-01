@@ -1,6 +1,6 @@
 baseURL = 'https://kouosi.netlify.app/'
 languageCode = 'en-us'
-title = 'Kouosi Takayama'
+title = 'Inogen Limbu'
 
 [params]
     defaultDescription = "Welcome to my website."
