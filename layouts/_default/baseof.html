@@ -15,8 +15,8 @@
     <meta name="keywords" content="fuckin,read,die">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <link rel="alternate" type="application/rss+xml" title="Kouosi Tsuamine RSS" href="/rss.xml">
-    {{- $style := resources.Get "css/style.css" | resources.Minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+    {{- $style := resources.Get "css/style.css" | resources.Minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     <link rel="icon" href="/favicon.ico">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,8 +51,8 @@
     </footer>
 
     <!-- Main JavaScript -->
-    {{- $script := resources.Get "js/app.js" | resources.Minify | fingerprint }}
-    <script src="{{ $script.RelPermalink}}" integrity="{{ $script.Data.Integrity}}" async></script>
+    {{- $script := resources.Get "js/app.js" | resources.Minify }}
+    <script src="{{ $script.RelPermalink}}" async></script>
 </body>
 
 </html>
