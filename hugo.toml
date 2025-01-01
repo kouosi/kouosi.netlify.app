@@ -1,6 +1,7 @@
 baseURL = 'https://kouosi.netlify.app/'
 languageCode = 'en-us'
 title = 'Inogen Limbu'
+enableRobotsTXT = true
 
 [params]
     defaultDescription = "Welcome to my website."
