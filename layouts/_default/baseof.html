@@ -12,7 +12,7 @@
     <meta name="theme-color" content="#222222">
     <meta name="description"
         content="{{ if .Params.description }}{{ .Params.description }}{{ else if .Summary }}{{ .Summary | plainify }}{{ else }}{{ site.Params.defaultDescription }}{{ end }}">
-    <meta name="keywords" content="fuckin,read,die">
+    <meta name="keywords" content='{{ if .Keywords }}{{ delimit .Keywords "," }}{{ else }}Inogen Limbu{{ end }}'>
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <link rel="alternate" type="application/rss+xml" title="Kouosi Tsuamine RSS" href="/rss.xml">
     {{- $style := resources.Get "css/style.css" | resources.Minify }}
