@@ -1,5 +1,9 @@
-{{- if isset .Params "author" }}
-Posted on Nov 19, 2024
+<!-- {{- if isset .Params "author" }} -->
+{{ with .Params.date }}
+<div>
+    <i class="fa-solid fa-calendar-days"></i> {{ .UTC.Format "02 Jan 2006" }}
+</div>
+{{ end }}
 <br>
-by {{ .Params.author }}
-{{ end -}}
+<!-- by {{ .Params.author }} -->
+<!-- {{ end -}} -->
