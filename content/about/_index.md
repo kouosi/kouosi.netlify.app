@@ -2,7 +2,7 @@
 title = 'About Me'
 +++
 
-Hi, I’m Kouosi Tsuamine. And this is my little website in the corner of Internet. I am from Nepal which is a small but beautiful landlocked country located between China and India.
+Hi, I’m Inogen Limbu. And this is my little website in the corner of Internet. I am from Nepal which is a small but beautiful landlocked country located between China and India.
 
 ## What I do?
 To be fair I and a weeb with little knowledge about world but you can expect following things from me
