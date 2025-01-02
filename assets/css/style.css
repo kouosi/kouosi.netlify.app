@@ -344,9 +344,13 @@ main img {
 }
 
 .toc {
-    border: 1px solid var(--color-main);
+    border: 2px dashed var(--color-main);
     padding: .5rem;
     padding-top: 0;
+}
+
+#TableOfContents li {
+    list-style-type: "-> ";
 }
 
 /* Footer */
