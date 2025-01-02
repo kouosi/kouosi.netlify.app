@@ -15,7 +15,7 @@
     <meta name="keywords" content='{{ if .Keywords }}{{ delimit .Keywords "," }}{{ else }}Inogen Limbu{{ end }}'>
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <link rel="alternate" type="application/rss+xml" title="Kouosi Tsuamine RSS" href="/rss.xml">
-    {{- $style := resources.Get "css/style.css" | resources.Minify }}
+    {{- $style := resources.Get "css/style.css" | resources.Minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     <link rel="icon" href="/favicon.ico">
     <!-- Fonts -->
@@ -51,7 +51,7 @@
     </footer>
 
     <!-- Main JavaScript -->
-    {{- $script := resources.Get "js/app.js" | resources.Minify }}
+    {{- $script := resources.Get "js/app.js" | resources.Minify | fingerprint }}
     <script src="{{ $script.RelPermalink}}" async></script>
 </body>
 
