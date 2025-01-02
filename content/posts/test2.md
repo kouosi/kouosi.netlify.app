@@ -72,7 +72,7 @@ term
 
 ### Video embeed
 {{<raw-html>}}
-    <iframe title="Video" allowfullscreen src="https://yewtu.be/embed/aqz-KE-bpKQ"></iframe>
+<iframe height="569" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 {{</raw-html>}}
 
 
