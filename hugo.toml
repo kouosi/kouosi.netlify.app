@@ -11,7 +11,7 @@ enableRobotsTXT = true
     posts = '/posts/:title/'
 
 [sitemap]
-    changefreq = 'monthly'
+    changefreq = 'hourly'
     filename = 'sitemap.xml'
     priority = 0.5
 
