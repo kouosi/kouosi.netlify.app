@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<h1>{{ .Title }}</h1>
+
+<hr>
+
+{{ .Content }}
+
+<ul>
+    {{ range readDir "static/cities/" }}
+        {{ if (findRE "$" .Name) }}
+            <li><a href="/cities/{{ .Name }}">{{ .Name }}</a></li>
+        {{ end }}
+    {{ end }}
+</ul>
+
+{{ end }}
