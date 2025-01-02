@@ -30,3 +30,8 @@ enableRobotsTXT = true
         noHl = false
         style = 'monokai'
         tabWidth = 4
+
+    [markup.tableOfContents]
+        endLevel = 2
+        ordered = false
+        startLevel = 2

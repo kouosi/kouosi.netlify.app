@@ -44,6 +44,7 @@
 html {
     scroll-behavior: smooth;
     max-height: fit-content;
+    scroll-padding-top: 4rem;
 }
 
 body {
@@ -342,6 +343,12 @@ main img {
     justify-content: space-between;
 }
 
+.toc {
+    border: 1px solid var(--color-main);
+    padding: .5rem;
+    padding-top: 0;
+}
+
 /* Footer */
 footer {
     width: 100%;
@@ -370,8 +377,7 @@ footer p {
 }
 
 .prev_next,
-#back-to-top
-{
+#back-to-top {
     text-decoration: none !important;
 }
 

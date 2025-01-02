@@ -13,6 +13,14 @@
 {{ end }}
 <hr>
 
+<!-- FIXME -->
+{{ if gt (len .TableOfContents) 100 }}
+<section class="toc">
+<h3>Table of Content</h3>
+{{ .TableOfContents }}
+</section>
+{{ end }}
+
 {{ .Content }}
 
 {{ partial "post_nav.html" . }}
