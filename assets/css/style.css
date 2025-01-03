@@ -23,7 +23,7 @@
 }
 
 [data-theme="light"] {
-    --color-main: #00cccc;
+    --color-main: #00aaaa;
     --color-main-alt: #00a0f8;
     --color-bg: #eeeeee;
     --color-bg-sec: #dddddd;
@@ -51,7 +51,7 @@ body {
     padding-top: 4rem;
     background: var(--color-bg);
     color: var(--color-fg);
-    font: inherit "Poppins", serif;
+    font-family: "Poppins", serif;
     transition: background .3s;
 }
 
@@ -204,7 +204,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background: var(--color-main);
+    background: #007272;
     z-index: 10000;
     padding: .5rem;
 }
@@ -242,7 +242,7 @@ header .trademark svg {
 }
 
 header .trademark span {
-    font: normal 400 1.8rem "Fontdiner Swanky", serif;
+    font: normal 400 1.8rem "Libre Baskerville", serif;
     margin-left: .5rem;
 }
 
@@ -287,7 +287,8 @@ header nav ul li {
     text-align: center;
 }
 
-#theme-switcher i {
+#theme-switcher i,
+#dropdown-toggle i {
     display: block;
 }
 
@@ -305,7 +306,7 @@ main {
     padding: .5rem;
     max-width: 56rem;
     margin: auto;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     min-height: calc(100vh - 24rem);
 }
 
@@ -449,7 +450,7 @@ a::selection {
     header nav ul {
         flex-direction: column;
         position: absolute;
-        top: 3.8rem;
+        top: 3.25rem;
         right: 0;
         background-color: #277d;
         width: 100%;
